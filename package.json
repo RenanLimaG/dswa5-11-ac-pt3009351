@@ -1,0 +1,25 @@
+{
+    "name": "semana_15",
+    "version": "1.0.0",
+    "description": "Criação de esquemas (Contatos e Cursos)",
+    "main": "index.js",
+    "scripts": {
+        "preinstall": "npx npm-force-resolutions"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "ejs": "^3.1.8",
+        "express": "^4.17.1",
+        "express-load": "^1.1.7",
+        "git": "^0.1.5",
+        "method-override": "^2.3.10",
+        "mongodb": "^3.6.2",
+        "mongoose": "^5.10.5",
+        "uglify-js": "^3.8.0"
+    },
+    "engines": {
+        "node": "12.x"
+    }
+}
