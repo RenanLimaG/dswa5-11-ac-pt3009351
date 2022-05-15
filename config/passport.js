@@ -9,7 +9,7 @@ done(null, usuario._id);
     var Usuario = mongoose.model('Usuario');
     passport.use(new GitHubStrategy({
     clientID: '43ceaba8bea0a10020fd',
-    clientSecret: '3bd502dc971259d898132831d776ce9b1048faa6',
+    clientSecret: '88663e5870b59ac7e65e02ad7be2fdb99496f6fa',
     callbackURL: 'https://dswa5-11-ac-pt3009351.herokuapp.com/auth/github/callback'
     }, function(accessToken, refreshToken, profile, done) {
         Usuario.findOrCreate(
