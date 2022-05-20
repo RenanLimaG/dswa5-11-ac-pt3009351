@@ -1,4 +1,3 @@
-#!/bin/bash
 sudo npm install
 echo "Instalar referências do Package.json"
 sudo npm install express@4.8 --save
