@@ -1,16 +1,13 @@
 var passport = require('passport');
-var GitHubStrategy = require('passport-github').Strategy;
+var GitHubStrategy = require('passport-github2').Strategy;
 var mongoose = require('mongoose');
 
 module.exports = function() {
-    passport.serializeUser(function(usuario, done) {
-done(null, usuario._id);
-});
     var Usuario = mongoose.model('Usuario');
     passport.use(new GitHubStrategy({
-    clientID: '43ceaba8bea0a10020fd',
-    clientSecret: '88663e5870b59ac7e65e02ad7be2fdb99496f6fa',
-    callbackURL: 'https://dswa5-11-ac-pt3009351.herokuapp.com/auth/github/callback'
+    clientID: '68b4102ef3cd6e9e8a89',
+    clientSecret: '736aa634bfd0d2fe316bde461e8a53368d509467',
+    callbackURL: 'http://localhost:3000/auth/github/callback'
     }, function(accessToken, refreshToken, profile, done) {
         Usuario.findOrCreate(
             { "login" : profile.username},
@@ -23,8 +20,7 @@ done(null, usuario._id);
             );
         return done(null, usuario);
         
-    }
-    ));
+    }));
     passport.serializeUser(function(usuario, done) {
         done(null, usuario._id);
         });
@@ -35,4 +31,3 @@ done(null, usuario._id);
             });
         });
     };
-    

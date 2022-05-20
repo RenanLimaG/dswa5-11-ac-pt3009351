@@ -9,15 +9,6 @@ module.exports = function() {
     //Instância do Express
     var app = express();
 
-    app.use(cookieParser());
-    app.use(session(
-        { secret: 'homem avestruz',
-        resave: true,
-        saveUninitialized: true
-    }
-    ));
-    app.use(passport.initialize());
-    app.use(passport.session());
     //Porta da aplicação	
     //app.set('port', 3000);
     app.set('port', process.env.PORT || 5000);
@@ -31,6 +22,17 @@ module.exports = function() {
     //Definir Engine para a View
     app.set('view engine', 'ejs');
     app.set('views', './app/views');
+
+    app.use(cookieParser());
+    app.use(session(
+        { secret: 'homem avestruz',
+        resave: true,
+        saveUninitialized: true
+    }
+    ));
+
+    app.use(passport.initialize());
+    app.use(passport.session());
 
     //Carregar pastas
     load('models', {cwd: 'app'})
